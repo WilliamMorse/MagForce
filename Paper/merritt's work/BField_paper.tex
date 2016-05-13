@@ -1,0 +1,84 @@
+\documentclass[aps,twocolumn,secnumarabic,balancelastpage,amsmath,amssymb,nofootinbib,floatfix]{revtex4-1}
+
+\usepackage{graphicx}      % tools for importing graphics
+\usepackage{svg}
+\usepackage{float}
+
+%\usepackage{lgrind}        % convert program code listings to a form 
+                            % includable in a LaTeX document
+%\usepackage{xcolor}        % produces boxes or entire pages with 
+                            % colored backgrounds
+%\usepackage{longtable}     % helps with long table options
+%\usepackage{epsf}          % old package handles encapsulated postscript issues
+\usepackage{bm}            % special bold-math package. usge: \bm{mathsymbol}
+%\usepackage{asymptote}     % For typesetting of mathematical illustrations
+%\usepackage{thumbpdf}
+\usepackage[colorlinks=true]{hyperref}  % this package should be added after 
+                                        % all others.
+                                        % usage: \url{http://web.mit.edu/8.13}
+\setsvg{inkscape = inkscape -z -D} % conversion options for svg package, export drawing instead of page
+
+
+\begin{document}
+\title{Electrical Measurement of the Speed of Light}
+\author{Merritt Waldron,William Morse}
+%\email{nobody@mit.edu}
+%\homepage{http://web.mit.edu/8.13/} %If you don't have one, just comment out this line.
+\date{\today}
+\affiliation{University of Southern Maine Physics Department}
+
+\begin{abstract} 
+The paired coils in Helmholtz configuration are commonly used in laboratories for creating of uniform magnetic field. We investigate the effects on a dipole in several different magnetic field arrangements (Helmholtz, Quadrupole, and 
+Single coil) of the Helmholtz configuration. Python code and data files pertaining to this experiment can be found at https://github.com/MDWIII/SpeedOfLight.git.
+\end{abstract}
+
+\maketitle
+\section{Introduction}
+The coils are named in honor of the german scientists Herman von Helmholtz, who, among others
+researched electromagnetism. Helmholtz coils in one axis are consisted from two identical coils with defined radius R. The
+centers of both coils are placed on the same axis in distance, which is equal to radius R.\cite{Math}. By manipulating the direction of current within each coil we can change the shape of the magnetic field inside the Helmholtz configuration. We begin by for computing the on axis magnetic field B inside our Helmholtz configuration, which is derived from the Biot-Savart law \cite{Knight}.
+\begin{equation}
+	B = \frac{\mu_0  NI}{2} \frac{R^2}{(R_y^2+R^2)^\frac{3}{2}}
+\end{equation}
+Above, I is coil current, N = 168 turns of wire µ-0 is permeability of 
+free space, R is coil radius and $R_y$ is distance of investigated point
+on axis from one of the coils. From this we can calculate the gradient of the field in the coils by differentiating with respect to $R_y$ resulting in,
+\begin{equation}
+	\frac{dB_y}{dR_y} = \frac{3}{2} I N \frac{ R^2 R_y}{(R_y^2 +R^2)^{\frac{5}{2}}}
+\end{equation}
+And considering two coils at the center of the helmholtz configuration $R_y$ = R/2 we get the equation,
+\begin{equation}
+	\frac{dB_y}{dy} = \frac{-48 \mu_0  N  I}{25\sqrt{5} R^2}
+\end{equation}
+We can use these results to investigate the behavior of the magnetic field in the Helmholtz configuration using a magnetic dipole. 
+
+\section{Experimental setup}
+
+
+\section{Data Collection}
+
+
+\section{Data \& Error Analysis}
+
+
+
+
+\newpage
+\begin{thebibliography}{}
+
+\bibitem{Math}
+	UHER, M[iroslav]; FIALKA, J[iri] & VAGNER, M[artin]  "Confirmation of Mathematical Model of Helmholtz Coils on the Real Constructions",  Volume 22, No. 1, ISSN 1726-9679
+ISBN 978-3-901509-83-4, Published by DAAAM International, Vienna, Austria, EU, 2011
+
+\bibitem{Knight}
+	Knight R.
+	(2011) Physics for scientists & engineers with modern physics.
+	
+	
+\bibitem{Probes}
+	E.L. Bronaugh, Helmholtz coils for calibration of probes and meters:
+Limits of magnetic field accuracy and uniformity, IEEE International
+Symposium on Electromagnetic Compatibility, Atlanta, August 1995,
+pp. 72?76			
+\end{thebibliography}
+\end{document}
